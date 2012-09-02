@@ -1,2 +1,12 @@
 /dist
 /build.xml
+=======
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+share.log*
+alfresco.log*
+bin/*
