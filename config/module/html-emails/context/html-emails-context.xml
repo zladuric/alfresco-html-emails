@@ -12,7 +12,7 @@
 			<ref bean="ServiceRegistry" />
 		</property>
 	</bean>
-	<bean id="htmlEmailsActionExecuter"
+	<bean id="htmlMails"
 		class="org.alfresco.repo.action.executer.HtmlEmailsActionExecuter"
 		parent="action-executer">
 		<property name="mailService">
