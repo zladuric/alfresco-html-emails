@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<beans>
+
+	<bean id="htmlEmails" parent="baseJavaScriptExtension"
+		class="org.alfresco.repo.jscript.HtmlEmails">
+		<property name="extensionName">
+			<value>HtmlEmails</value>
+		</property>
+		<property name="serviceRegistry">
+			<ref bean="ServiceRegistry" />
+		</property>
+	</bean>
+	<bean id="htmlEmailsActionExecuter"
+		class="org.alfresco.repo.action.executer.HtmlEmailsActionExecuter"
+		parent="action-executer">
+		<property name="mailService">
+			<ref bean="mailService"></ref>
+		</property>
+		<property name="templateService">
+			<ref bean="templateService"></ref>
+		</property>
+		<property name="personService">
+			<ref bean="personService"></ref>
+		</property>
+		<property name="authenticationService">
+			<ref bean="authenticationService"></ref>
+		</property>
+		<property name="nodeService">
+			<ref bean="nodeService"></ref>
+		</property>
+		<property name="serviceRegistry">
+			<ref bean="ServiceRegistry"></ref>
+		</property>
+		<property name="fromAddress">
+			<value>${mail.from.default}</value>
+		</property>
+		<property name="repoRemoteUrl">
+			<value>${repo.remote.url}</value>
+		</property>
+	</bean>
+
+
+</beans>
